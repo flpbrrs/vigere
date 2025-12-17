@@ -1,5 +1,6 @@
 using Scalar.AspNetCore;
 using vigere.infra;
+using vigere.infra.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapScalarApiReference();
+
+    await app.Services.ApplyMigrationsAsync();
 }
 
 app.UseHttpsRedirection();
