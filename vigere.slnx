@@ -1,1 +1,10 @@
-<Solution />
+<Solution>
+  <Folder Name="/solution itens/">
+    <File Path=".env" />
+    <File Path=".env.example" />
+    <File Path="docker-compose.yml" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/vigere.api/vigere.api.csproj" Id="6f6e6ed3-2a68-4f13-9b2d-e9f954af6ea0" />
+  </Folder>
+</Solution>
