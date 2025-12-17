@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using vigere.infra.Database;
@@ -11,9 +12,11 @@ using vigere.infra.Database;
 namespace vigere.infra.Migrations
 {
     [DbContext(typeof(VigereDbContext))]
-    partial class VigereDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251217230630_MapConfiguration")]
+    partial class MapConfiguration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
