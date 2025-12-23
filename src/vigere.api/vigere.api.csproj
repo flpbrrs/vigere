@@ -17,12 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\vigere.application\vigere.application.csproj" />
     <ProjectReference Include="..\vigere.comunication\vigere.comunication.csproj" />
-    <ProjectReference Include="..\vigere.domain\vigere.domain.csproj" />
+    <ProjectReference Include="..\vigere.exceptions\vigere.exceptions.csproj" />
     <ProjectReference Include="..\vigere.infra\vigere.infra.csproj" />
   </ItemGroup>
 

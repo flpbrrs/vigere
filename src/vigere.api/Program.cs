@@ -1,5 +1,6 @@
 using Scalar.AspNetCore;
 using vigere.api.Handlers;
+using vigere.application;
 using vigere.infra;
 using vigere.infra.Migrations;
 
@@ -13,6 +14,7 @@ builder.Services.AddExceptionHandler<ApiExceptionHandler>();
 builder.Services.AddProblemDetails();
 
 builder.Services.AddInfra(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

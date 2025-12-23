@@ -6,6 +6,7 @@
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/vigere.api/vigere.api.csproj" Id="6f6e6ed3-2a68-4f13-9b2d-e9f954af6ea0" />
+    <Project Path="src/vigere.application/vigere.application.csproj" Id="e770d00a-9547-4b22-945d-93c1a9f0792d" />
     <Project Path="src/vigere.comunication/vigere.comunication.csproj" Id="e8cdc6fd-5727-4647-9349-f0bf2920d7a3" />
     <Project Path="src/vigere.domain/vigere.domain.csproj" Id="7b2f4f6d-4bee-477a-a0f2-9f13f5d0605b" />
     <Project Path="src/vigere.exceptions/vigere.exceptions.csproj" Id="b5d35f60-15da-47e2-b736-099c76aac492" />
