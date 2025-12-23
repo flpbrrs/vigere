@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\vigere.comunication\vigere.comunication.csproj" />
     <ProjectReference Include="..\vigere.domain\vigere.domain.csproj" />
     <ProjectReference Include="..\vigere.infra\vigere.infra.csproj" />
   </ItemGroup>
