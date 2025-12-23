@@ -120,4 +120,7 @@
   <data name="UNEXPECTED_ERROR" xml:space="preserve">
     <value>Um erro inesperado ocorreu. Tente mais tarde novamente.</value>
   </data>
+  <data name="VALIDATION_ERROR" xml:space="preserve">
+    <value>Um ou mais erros de validação ocorreram</value>
+  </data>
 </root>

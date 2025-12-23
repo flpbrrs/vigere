@@ -61,6 +61,42 @@ namespace vigere.exceptions.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to email.invalid.
+        /// </summary>
+        public static string EMAIL_INVALID {
+            get {
+                return ResourceManager.GetString("EMAIL_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to email.required.
+        /// </summary>
+        public static string EMAIL_REQUIRED {
+            get {
+                return ResourceManager.GetString("EMAIL_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to password.min-length-{MinLength}.
+        /// </summary>
+        public static string PASSWORD_INVALID_SIZE {
+            get {
+                return ResourceManager.GetString("PASSWORD_INVALID_SIZE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to password.required.
+        /// </summary>
+        public static string PASSWORD_REQUIRED {
+            get {
+                return ResourceManager.GetString("PASSWORD_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to unknow.error.
         /// </summary>
         public static string UNKNOW_ERROR {

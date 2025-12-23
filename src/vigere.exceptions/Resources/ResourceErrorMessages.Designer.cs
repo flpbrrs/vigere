@@ -68,5 +68,14 @@ namespace vigere.exceptions.Resources {
                 return ResourceManager.GetString("UNEXPECTED_ERROR", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Um ou mais erros de validação ocorreram.
+        /// </summary>
+        public static string VALIDATION_ERROR {
+            get {
+                return ResourceManager.GetString("VALIDATION_ERROR", resourceCulture);
+            }
+        }
     }
 }
