@@ -7,7 +7,7 @@ public class User
     public long Id { get; set; }
     public string Email { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
-    public Guid Identifier { get; set; }
+    public Guid Identifier { get; set; } = Guid.NewGuid();
     public string Role { get; set; } = Roles.User;
-    public DateTime ControlDate { get; set; }
+    public DateTime ControlDate { get; set; } = DateTime.UtcNow;
 }

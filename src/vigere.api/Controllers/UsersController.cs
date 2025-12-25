@@ -17,8 +17,8 @@ public class UsersController : ControllerBase
         [FromServices] IRegisterUserUseCase _usecase
     )
     {
-        var result = await _usecase.Execute(request);
+        await _usecase.Execute(request);
 
-        return Created(string.Empty, result);
+        return Created(string.Empty, null);
     }
 }

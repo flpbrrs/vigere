@@ -13,10 +13,15 @@ public class RegisterUserUseCase(
     IValidator<RequestRegisterUserJson> _validator
 ) : IRegisterUserUseCase
 {
-    public Task<Empty> Execute(RequestRegisterUserJson request)
+    public async Task<Empty> Execute(RequestRegisterUserJson request)
     {
         _validator.ValidateAndThrowIfInvalid(request);
 
-        throw new NotImplementedException();
+        var user = request.ToEntity();
+
+        await _repository.Register(user);
+        await _UoW.Commit();
+
+        return Empty.Value;
     }
 }
