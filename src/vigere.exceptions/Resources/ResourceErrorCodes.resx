@@ -126,6 +126,18 @@
   <data name="PASSWORD_INVALID_SIZE" xml:space="preserve">
     <value>password.min-length-{MinLength}</value>
   </data>
+  <data name="PASSWORD_MUST_CONTAIN_LOWERCASE" xml:space="preserve">
+    <value>password.must-contain-lowercase</value>
+  </data>
+  <data name="PASSWORD_MUST_CONTAIN_NUMBER" xml:space="preserve">
+    <value>password.must-contain-number</value>
+  </data>
+  <data name="PASSWORD_MUST_CONTAIN_SPECIAL_CHAR" xml:space="preserve">
+    <value>password.must-contain-special-char</value>
+  </data>
+  <data name="PASSWORD_MUST_CONTAIN_UPPERCASE" xml:space="preserve">
+    <value>password.must-contain-uppercase</value>
+  </data>
   <data name="PASSWORD_REQUIRED" xml:space="preserve">
     <value>password.required</value>
   </data>

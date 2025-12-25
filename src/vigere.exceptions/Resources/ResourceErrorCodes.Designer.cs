@@ -88,6 +88,42 @@ namespace vigere.exceptions.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to password.must-contain-lowercase.
+        /// </summary>
+        public static string PASSWORD_MUST_CONTAIN_LOWERCASE {
+            get {
+                return ResourceManager.GetString("PASSWORD_MUST_CONTAIN_LOWERCASE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to password.must-contain-number.
+        /// </summary>
+        public static string PASSWORD_MUST_CONTAIN_NUMBER {
+            get {
+                return ResourceManager.GetString("PASSWORD_MUST_CONTAIN_NUMBER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to password.must-contain-special-char.
+        /// </summary>
+        public static string PASSWORD_MUST_CONTAIN_SPECIAL_CHAR {
+            get {
+                return ResourceManager.GetString("PASSWORD_MUST_CONTAIN_SPECIAL_CHAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to password.must-contain-uppercase.
+        /// </summary>
+        public static string PASSWORD_MUST_CONTAIN_UPPERCASE {
+            get {
+                return ResourceManager.GetString("PASSWORD_MUST_CONTAIN_UPPERCASE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to password.required.
         /// </summary>
         public static string PASSWORD_REQUIRED {
