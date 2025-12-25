@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using vigere.application.Abstractions;
 using vigere.application.Extensions;
 using vigere.comunication.Requests;
+using vigere.comunication.Responses;
 using vigere.domain.Repositories;
 using vigere.domain.Repositories.Users;
 
@@ -13,7 +13,7 @@ public class RegisterUserUseCase(
     IValidator<RequestRegisterUserJson> _validator
 ) : IRegisterUserUseCase
 {
-    public async Task<Empty> Execute(RequestRegisterUserJson request)
+    public async Task<ResponseRegisterUserJson> Execute(RequestRegisterUserJson request)
     {
         _validator.ValidateAndThrowIfInvalid(request);
 
@@ -22,6 +22,6 @@ public class RegisterUserUseCase(
         await _repository.Register(user);
         await _UoW.Commit();
 
-        return Empty.Value;
+        return user.ToRegisterResponse();
     }
 }

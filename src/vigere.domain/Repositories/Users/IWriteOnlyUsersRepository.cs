@@ -4,5 +4,5 @@ namespace vigere.domain.Repositories.Users;
 
 public interface IWriteOnlyUsersRepository
 {
-    public Task Register(User user);
+    public Task<User> Register(User user);
 }
