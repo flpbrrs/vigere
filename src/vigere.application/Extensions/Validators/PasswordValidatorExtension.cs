@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using vigere.exceptions.Resources;
 
-namespace vigere.application.Common.Validators;
+namespace vigere.application.Extensions.Validators;
 
 public static class PasswordValidatorExtension
 {

@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using vigere.application.Common.Validators;
+using vigere.application.Extensions.Validators;
 using vigere.comunication.Requests;
 using vigere.exceptions.Resources;
 
