@@ -61,6 +61,15 @@ namespace vigere.exceptions.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ocorreu um erro durante o fluxo da aplicação.
+        /// </summary>
+        public static string DOMAIN_ERROR {
+            get {
+                return ResourceManager.GetString("DOMAIN_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Um erro inesperado ocorreu. Tente mais tarde novamente..
         /// </summary>
         public static string UNEXPECTED_ERROR {

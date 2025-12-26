@@ -19,6 +19,7 @@ public static class InfraDIExtension
         });
 
         services.AddScoped<IWriteOnlyUsersRepository, UserRepository>();
+        services.AddScoped<IReadOnlyUserRepository, UserRepository>();
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 

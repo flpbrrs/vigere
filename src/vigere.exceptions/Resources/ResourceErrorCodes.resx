@@ -144,4 +144,7 @@
   <data name="UNKNOW_ERROR" xml:space="preserve">
     <value>unknow.error</value>
   </data>
+  <data name="USER_ALREADY_EXISTS" xml:space="preserve">
+    <value>user.already-exists</value>
+  </data>
 </root>

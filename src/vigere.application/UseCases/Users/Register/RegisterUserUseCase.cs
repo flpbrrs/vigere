@@ -5,11 +5,14 @@ using vigere.comunication.Responses;
 using vigere.domain.Providers;
 using vigere.domain.Repositories;
 using vigere.domain.Repositories.Users;
+using vigere.exceptions;
+using vigere.exceptions.Resources;
 
 namespace vigere.application.UseCases.Users.Register;
 
 public class RegisterUserUseCase(
-    IWriteOnlyUsersRepository _repository,
+    IWriteOnlyUsersRepository _writeRepository,
+    IReadOnlyUserRepository _readRepository,
     IUnitOfWork _UoW,
     IValidator<RequestRegisterUserJson> _validator,
     IEncrypter _encrypter
@@ -18,12 +21,15 @@ public class RegisterUserUseCase(
     public async Task<ResponseRegisterUserJson> Execute(RequestRegisterUserJson request)
     {
         _validator.ValidateAndThrowIfInvalid(request);
+    
+        if (await _readRepository.ExistsUserWithEmail(request.Email))
+            throw new VigereDomainException(ResourceErrorCodes.USER_ALREADY_EXISTS);
 
         var encryptedPassword = _encrypter.Encrypt(request.Password);
 
         var user = request.ToEntityWithEncryptedPassword(encryptedPassword);
 
-        await _repository.Register(user);
+        await _writeRepository.Register(user);
         await _UoW.Commit();
 
         return user.ToRegisterResponse();
