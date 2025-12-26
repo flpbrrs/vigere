@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using vigere.domain.Providers;
 using vigere.domain.Repositories;
 using vigere.domain.Repositories.Users;
 using vigere.infra.Database;
 using vigere.infra.Database.Repositories;
+using vigere.infra.Security;
 
 namespace vigere.infra;
 
@@ -19,6 +21,8 @@ public static class InfraDIExtension
         services.AddScoped<IWriteOnlyUsersRepository, UserRepository>();
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+        services.AddScoped<IEncrypter, BcryptEncrypter>();
 
         return services;
     }

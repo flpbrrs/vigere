@@ -13,6 +13,13 @@ public static class UserMapProfile
             Password = request.Password
         };
 
+    public static User ToEntityWithEncryptedPassword(this RequestRegisterUserJson request, string encryptedPassword) =>
+        new()
+        {
+            Email = request.Email,
+            Password = encryptedPassword
+        };
+
     public static ResponseRegisterUserJson ToRegisterResponse(this User user) =>
         new()
         {
