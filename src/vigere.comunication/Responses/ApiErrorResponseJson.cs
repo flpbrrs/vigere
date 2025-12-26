@@ -2,10 +2,20 @@
 
 namespace vigere.comunication.Responses;
 
-public class ApiErrorResponseJson(string? message, List<string>? codes) 
+public class ApiErrorResponseJson
 {
-    public string? Message { get; } = message;
-    public List<string>? ErrorCodes { get; } = codes;
+    public string? Message { get; }
+    public object? ErrorCodes { get; }
 
-    public ApiErrorResponseJson(string message) : this(message, [ResourceErrorCodes.UNKNOW_ERROR]) {}
+    public ApiErrorResponseJson(string message, object? errors)
+    {
+        Message = message;
+        ErrorCodes = errors;
+    }
+
+    public ApiErrorResponseJson(string message)
+    {
+        Message = message;
+        ErrorCodes = new[] { ResourceErrorCodes.UNKNOW_ERROR };
+    }
 }

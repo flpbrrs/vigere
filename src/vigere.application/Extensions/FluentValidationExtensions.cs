@@ -8,9 +8,16 @@ public static class FluentValidationExtensions
     public static void ValidateAndThrowIfInvalid<T>(this IValidator<T> validator, T instance)
     {
         var result = validator.Validate(instance);
+
         if (!result.IsValid)
         {
-            var errors = result.Errors.Select(e => e.ErrorMessage).ToList();
+            var errors = result.Errors
+                .GroupBy(e => e.PropertyName)
+                .ToDictionary(
+                    g => g.Key.ToLower(),
+                    g => g.Select(e => e.ErrorMessage).ToArray()
+                );
+
             throw new VigereValidationException(errors);
         }
     }

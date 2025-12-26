@@ -36,7 +36,7 @@ public class ApiExceptionHandler : IExceptionHandler
             exception.StatusCode,
             new ApiErrorResponseJson(
                 exception.Message,
-                exception.GetErrorCodes() ?? []
+                exception.GetErrorCodes()
             )
         );
     }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using vigere.comunication.Responses;
-using vigere.comunication.Requests;
 using vigere.application.UseCases.Users.Register;
+using vigere.comunication.Requests;
+using vigere.comunication.Responses;
 
 namespace vigere.api.Controllers;
 
