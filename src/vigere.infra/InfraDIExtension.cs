@@ -18,12 +18,15 @@ public static class InfraDIExtension
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
         });
 
+        services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));
+
         services.AddScoped<IWriteOnlyUsersRepository, UserRepository>();
         services.AddScoped<IReadOnlyUserRepository, UserRepository>();
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddScoped<IEncrypter, BcryptEncrypter>();
+        services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
 
         return services;
     }

@@ -15,7 +15,8 @@ public class RegisterUserUseCase(
     IReadOnlyUserRepository _readRepository,
     IUnitOfWork _UoW,
     IValidator<RequestRegisterUserJson> _validator,
-    IEncrypter _encrypter
+    IEncrypter _encrypter,
+    ITokenGenerator _tokenGenerator
 ) : IRegisterUserUseCase
 {
     public async Task<ResponseRegisterUserJson> Execute(RequestRegisterUserJson request)
@@ -32,6 +33,9 @@ public class RegisterUserUseCase(
         await _writeRepository.Register(user);
         await _UoW.Commit();
 
-        return user.ToRegisterResponse();
+        return new ResponseRegisterUserJson
+        {
+            Token = _tokenGenerator.GenerateToken(user)
+        };
     }
 }

@@ -1,5 +1,4 @@
 ﻿using vigere.comunication.Requests;
-using vigere.comunication.Responses;
 using vigere.domain.Entities;
 
 namespace vigere.application;
@@ -18,12 +17,5 @@ public static class UserMapProfile
         {
             Email = request.Email,
             Password = encryptedPassword
-        };
-
-    public static ResponseRegisterUserJson ToRegisterResponse(this User user) =>
-        new()
-        {
-            Id = user.Identifier.ToString(),
-            Token = "token_example"
         };
 }
