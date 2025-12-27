@@ -10,8 +10,8 @@ namespace vigere.api.Controllers;
 public class UsersController : ControllerBase
 {
     [HttpPost]
-    [ProducesResponseType<ResponseRegisterUserJson>(StatusCodes.Status201Created)]
-    [ProducesResponseType<ApiErrorResponseJson>(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType<ResponseAuthUserJson>(StatusCodes.Status201Created)]
+    [ProducesResponseType<ApiErrorResponseJson>(StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> Register(
         [FromBody] RequestRegisterUserJson request,
         [FromServices] IRegisterUserUseCase _usecase

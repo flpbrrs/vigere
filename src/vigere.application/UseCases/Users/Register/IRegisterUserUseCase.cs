@@ -4,4 +4,4 @@ using vigere.comunication.Responses;
 
 namespace vigere.application.UseCases.Users.Register;
 
-public interface IRegisterUserUseCase: IUseCase<RequestRegisterUserJson, ResponseRegisterUserJson> {}
+public interface IRegisterUserUseCase: IUseCase<RequestRegisterUserJson, ResponseAuthUserJson> {}

@@ -1,6 +1,6 @@
 ﻿namespace vigere.comunication.Responses;
 
-public class ResponseRegisterUserJson
+public class ResponseAuthUserJson
 {
     public string Token { get; set; } = string.Empty;
 }
