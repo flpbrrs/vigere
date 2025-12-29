@@ -1,4 +1,4 @@
-﻿using System.Net;
+﻿using vigere.exceptions.Bases;
 using vigere.exceptions.Resources;
 
 namespace vigere.exceptions;
@@ -7,7 +7,7 @@ public class VigereValidationException(IDictionary<string, string[]> errors) : V
 {
     private readonly IDictionary<string, string[]> _errors = errors;
 
-    public override int StatusCode => (int) HttpStatusCode.BadRequest;
+    public override VigereErrorType ErrorType => VigereErrorType.Validation;
 
     public override object GetErrorCodes()
     {

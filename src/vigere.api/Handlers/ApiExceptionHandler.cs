@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
-using vigere.exceptions.Resources;
 using vigere.comunication.Responses;
-using vigere.exceptions;
+using vigere.exceptions.Bases;
+using vigere.exceptions.Resources;
 
 namespace vigere.api.Handlers;
 
@@ -32,8 +32,18 @@ public class ApiExceptionHandler : IExceptionHandler
 
     private (int, ApiErrorResponseJson) HandleDomainException(VigereException exception)
     {
+        var statusCode = exception.ErrorType switch
+        {
+            VigereErrorType.Validation => StatusCodes.Status400BadRequest,
+            VigereErrorType.BusinessRule => StatusCodes.Status400BadRequest,
+            VigereErrorType.ResourceNotFound => StatusCodes.Status404NotFound,
+            VigereErrorType.Conflict => StatusCodes.Status409Conflict,
+            VigereErrorType.Unauthorized => StatusCodes.Status403Forbidden,
+            _ => StatusCodes.Status500InternalServerError
+        };
+
         return (
-            exception.StatusCode,
+            statusCode,
             new ApiErrorResponseJson(
                 exception.Message,
                 exception.GetErrorCodes()

@@ -1,7 +1,7 @@
-﻿namespace vigere.exceptions;
+﻿namespace vigere.exceptions.Bases;
 
 public abstract class VigereException(string message) : SystemException(message)
 {
-    public abstract int StatusCode { get; }
+    public abstract VigereErrorType ErrorType { get; }
     public abstract object GetErrorCodes();
 }
