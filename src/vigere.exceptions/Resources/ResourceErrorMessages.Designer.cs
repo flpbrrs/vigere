@@ -70,6 +70,15 @@ namespace vigere.exceptions.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to As credenciais informadas estão inválidas.
+        /// </summary>
+        public static string INVALID_CREDENTIALS {
+            get {
+                return ResourceManager.GetString("INVALID_CREDENTIALS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Um erro inesperado ocorreu. Tente mais tarde novamente..
         /// </summary>
         public static string UNEXPECTED_ERROR {

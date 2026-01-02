@@ -21,4 +21,10 @@ public static class FluentValidationExtensions
             throw new VigereValidationException(errors);
         }
     }
+
+    public static bool IsValid<T>(this IValidator<T> validator, T instance)
+    {
+        var result = validator.Validate(instance);
+        return result.IsValid;
+    }
 }

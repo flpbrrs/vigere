@@ -4,8 +4,7 @@ namespace vigere.infra.Security;
 
 public class BcryptEncrypter : IEncrypter
 {
-    public string Encrypt(string plainText)
-    {
-        return BCrypt.Net.BCrypt.HashPassword(plainText);
-    }
+    public bool Verify(string hashedText, string originalText) => BCrypt.Net.BCrypt.Verify(originalText, hashedText);
+
+    public string Encrypt(string plainText) => BCrypt.Net.BCrypt.HashPassword(plainText);
 }
